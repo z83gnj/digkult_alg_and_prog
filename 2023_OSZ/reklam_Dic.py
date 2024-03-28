@@ -48,7 +48,7 @@ chosenday = input("Kérem adja meg a nap számát (1-30): ")
 if chosenday.isdigit():
     chosenday = int(chosenday)
     if 0 < chosenday <= 30:
-        ordersum = allorders["NR"][chosenday] + allorders["PL"][chosenday] + allorders["TV"][chosenday]
+        ordersum = allorders["NR"][chosenday - 1] + allorders["PL"][chosenday - 1] + allorders["TV"][chosenday - 1]
         print (f"A {chosenday}. napon leadott rendelések száma: {ordersum}")
     else:
         print ("HIBA!!! A megadott nap nincs a vizsgált intervallumban!!!")
