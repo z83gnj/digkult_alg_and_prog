@@ -1,3 +1,7 @@
+# 6. összesítő függvény készítése
+def osszes(city, day):
+    print("test")
+
 # 1. Adatok beolvasása
 
 # Listák a rendelések számához.
@@ -10,6 +14,8 @@ tv = [0] * 30
 
 # Bemeneti fájl neve
 inputname = "rendel.txt"
+max = 0
+maxday = 0
 
 # Fájl megnyitása, adatok szortírozása
 with open(inputname,'r') as file:
@@ -24,6 +30,11 @@ with open(inputname,'r') as file:
             pl[day] = pl[day] + order
         elif city == "TV":
             tv[day] = tv[day] + order
+ # 5. feladat max rendelés szám, és annak a napja.
+        if order > max:
+            max = order
+            maxday = day       
+
 
 # print (nr)
 # print (pl) 
@@ -33,17 +44,30 @@ with open(inputname,'r') as file:
 print("2. feladat:")
 print("Az összes leadott rendelések száma: ", sum(nr) + sum(pl) + sum(tv))
 
-
 # 3. Adott napon hány rendelés történt
 print ("3. feladat:")
+day = input("Kérem adjon meg a nap számát(1-30): ")
+# Ellenőrzés hogy a megadott szám megfelelő-e
+if day.isdigit():
+    day = int(day)
+    if 0 < day <=30:    
+        print("Az adott napot ", nr[day] + pl[day] + tv[day], "rendelés történt." )
+    else:
+        print("A megadott napszám nem esik a vizsgált intervallumba!!!")
+else:
+    print("A megadott érték nem szám!!!")
 
-input
+# 4. Hány nap nam volt rendelés a reklámmal nem érintett városban.
+print("4. feladat")
+count = 0
+for order in nr:
+    if order == 0:
+        count += 1
 
+if count == 0:
+    print ("Minden nap volt rendelés a reklámban nem érintett városból.")
+else:
+    print (count, " nap nem volt rendelés a relkában nem érintett városból.")
 
-try:
-    # Try to cast the variable to an integer
-    result = int(variable)
-    print("Casting successful. Result:", result)
-except ValueError:
-    # Handle the case where casting fails
-    print("Casting failed. The variable is not a valid integer.")
+# 5. feladat max rendelés szám, és annak a napja.
+print("A legnagyobb darabszám: ", max, ", a rendelés napja: ", maxday)
