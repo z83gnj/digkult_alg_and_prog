@@ -88,7 +88,6 @@ def osszes(city:str, day:int, orders:dict):
         print(f"A city={city} városnév nem létezik!!!!")
         return -1
 
-
 # 7. FELADAT
 # 21. nap városokra lebontva a rendelések száma.
 print("7. FELADAT")
