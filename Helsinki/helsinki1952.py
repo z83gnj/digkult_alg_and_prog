@@ -67,8 +67,29 @@ print(f"Sportág: {maxsportolo[2]}")
 print(f"Versenyszám: {maxsportolo[3]}")
 print(f"Sportolók száma: {maxsportolo[1]}")
 
+print("7.feladat")
+adatok_javitott=adatok.copy()
+for sor in adatok_javitott:
+    if sor[2]=="kajakkenu":
+        sor[2]="kajak-kenu"
 
-
+with open("Helsinki2.txt","w")as file:
+    for sor in adatok_javitott:
+        if sor[0]==1:
+            sor.insert(2,7)
+        elif sor[0]==2:
+            sor.insert(2,5)
+        elif sor[0]==3:
+            sor.insert(2,4)
+        elif sor[0]==4:
+            sor.insert(2,3)
+        elif sor[0]==5:
+            sor.insert(2,2)
+        else:
+            sor.insert(2,1)
+        for szo in sor:
+            file.write(str(szo)+" ")
+        file.write("\n")
 
 
 
