@@ -1,5 +1,2 @@
-number = input("adj meg egy számot: ")
-if number > '0' and number <='30':
-    print("OK")
-else:
-    print("NOK")
+for i in range(1,11):
+    print(i)
