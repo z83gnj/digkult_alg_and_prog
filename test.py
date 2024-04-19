@@ -1,2 +1,5 @@
-for i in range(1,11):
-    print(i)
+fruits = [4, 55, 64, 32, 16, 32]
+
+x = fruits.index(0)
+
+print(x)
