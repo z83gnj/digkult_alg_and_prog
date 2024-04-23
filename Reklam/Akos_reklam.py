@@ -41,7 +41,7 @@ else:
 nr = [0]*30
 for item in inputData:
     if item[1] == "NR":
-        nr[item[0]] +=1
+        nr[item[0]-1] +=1
 count1 = nr.count(0)
 if count1 == 0:
     print("Minden nap volt rendelés a reklámban nem érintett városból")
