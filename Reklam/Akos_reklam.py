@@ -21,6 +21,7 @@ for item in inputData:
 print(f"A(z) {orderDay}. napon a rendelések száma: {count}")
 
 # 4. Feladat
+# A rendelést tartalmazó napok számán alapul
 print("\n4. feladat")
 count = 30
 day = 1
@@ -35,6 +36,18 @@ if count == 0:
     print("Minden nap volt rendelés a reklámban nem érintett városból")
 else:
     print(f"{count} nap nem volt rendelés a reklámban nem érintett városból")
+
+# A rendelést nem tartalmazó napok számán alapul
+nr = [0]*30
+for item in inputData:
+    if item[1] == "NR":
+        nr[item[0]] +=1
+count1 = nr.count(0)
+if count1 == 0:
+    print("Minden nap volt rendelés a reklámban nem érintett városból")
+else:
+    print(f"{count1} nap nem volt rendelés a reklámban nem érintett városból")
+
 
 # 5. Feladat
 print("\n5. feladat")
@@ -84,6 +97,3 @@ with open("kampany.txt", "w") as f:
     f.write(f"{header[0]:<10}{header[1]:<10}{header[2]:<10}{header[3]:<10}\n")
     for key, value in sumPieces.items():
         f.write(f"{key:<10}{value[0]:<10}{value[1]:<10}{value[2]:<10}\n")
-
-
-#print(f"{'Name:':<10} {name:<10}")
