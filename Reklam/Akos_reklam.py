@@ -36,11 +36,11 @@ if count == 0:
 else:
     print(f"{count} nap nem volt rendelés a reklámban nem érintett városból")
 
-days = set()
+days = []
 for item in inputData:
     if item[1] == 'NR':
-        days.add(item[0])
-count2 = 30 - len(days)
+        days.append(item[0])
+count2 = 30 - len(set(days))
 if count2:
     print(f'{count2} nap nem volt a reklámban nem érintett városból rendelés')
 else:
