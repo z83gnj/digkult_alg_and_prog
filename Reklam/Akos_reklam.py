@@ -31,11 +31,22 @@ for item in inputData:
     if (item[1] == "NR") and (item[0] == day):
         day += 1
         count -= 1
-
 if count == 0:
     print("Minden nap volt rendelés a reklámban nem érintett városból")
 else:
     print(f"{count} nap nem volt rendelés a reklámban nem érintett városból")
+
+days = []
+for item in inputData:
+    if item[1] == 'NR':
+        days.append(item[0])
+count2 = 30 - len(set(days))
+if count2:
+    print(f'{count2} nap nem volt a reklámban nem érintett városból rendelés')
+else:
+    print('Minden nap volt rendelés a reklámban nem érintett városból')
+
+
 
 # A rendelést nem tartalmazó napok számán alapul
 nr = [0]*30
