@@ -13,7 +13,7 @@ print(f"A rendelések száma: {len(inputData)}")
 
 # 3. Feladat
 print("\n3. feladat")
-orderDay = int(input("Kérem, adjon meg egy napot! "))
+orderDay = 9 #int(input("Kérem, adjon meg egy napot! "))
 count = 0
 for item in inputData:
     if item[0] == orderDay:
@@ -40,6 +40,7 @@ days = []
 for item in inputData:
     if item[1] == 'NR':
         days.append(item[0])
+print(set(days))
 count2 = 30 - len(set(days))
 if count2:
     print(f'{count2} nap nem volt a reklámban nem érintett városból rendelés')
@@ -100,7 +101,7 @@ for item in inputData:
     else:
         sumPieces[item[1]][2] += 1
 header = ["Napok", "1..10", "11..20", "21..30"]
-print(f"{header[0]:<10}{header[1]:<10}{header[2]:<10}{header[3]:<10}")
+print(f"{header[0]:<30}{header[1]:<10}{header[2]:<10}{header[3]:<10}")
 for key, value in sumPieces.items():
     print(f"{key:<10}{value[0]:<10}{value[1]:<10}{value[2]:<10}")
 
