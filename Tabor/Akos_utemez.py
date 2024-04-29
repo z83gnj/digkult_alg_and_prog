@@ -14,13 +14,15 @@ print(f"Az elsőnek rögzített tábor témája: {camps[0][5]}")
 print(f"Az utólsónak rögzített tábor témája: {camps[-1][5]}")
 # 3. feladat
 print("3. feladat")
-music = False
+noMusic = True
 for item in camps:
     if item[-1] == "zenei":
         print(f"Zenei tábor kezdődik {item[0]}. hó {item[1]}. napján.")
-        music = True
-if not music:
+        noMusic = False
+if noMusic:
     print("Nem volt zenei tábor")
+
+
 # 4. feladat
 maxParc = [["0"]*6]
 for item in camps:
@@ -56,15 +58,13 @@ print(f"Ekkor éppen {count} tábor tart.")
 
 # 7. feladat
 print("7. feladat")
-def sorting (e):
-    return sorszam(e[0], e[1])
 studnt = input("Adja meg a tanuló betűjelét: ")
 studntCamps = []
 for item in camps:
     if studnt.upper() in item[-2]:
         studntCamps.append(item)
 
-studntCamps.sort(key=sorting)
+studntCamps.sort()
 canGo = True
 for i in range(len(studntCamps) - 1):
     if sorszam(studntCamps[i][2], studntCamps[i][3]) > sorszam(studntCamps[i+1][0], studntCamps[i+1][1]):
