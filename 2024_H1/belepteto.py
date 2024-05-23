@@ -36,10 +36,10 @@ if menza>konyvtar1:
 print("7.feladat")
 
 tanulo_id=input("Egy tanuló azonosítója")
-for i in bedat:
-    if tanulo_id.upper()==i[0] and i[2]==1:
+#for i in bedat:
+#    if tanulo_id.upper()==i[0] and i[2]==1:
     
-    if tanulo_id.upper()==i[0] and i[2]==2:
+#    if tanulo_id.upper()==i[0] and i[2]==2:
     
         
 
